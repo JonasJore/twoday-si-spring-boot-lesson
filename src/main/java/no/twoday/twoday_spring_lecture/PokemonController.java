@@ -1,6 +1,6 @@
 package no.twoday.twoday_spring_lecture;
 
-import no.twoday.twoday_spring_lecture.dto.Pokemon;
+import no.twoday.twoday_spring_lecture.dto.PokemonDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -15,7 +15,7 @@ public class PokemonController {
   private PokemonService pokemonService;
 
   @GetMapping("/{pokemonName}")
-  public Pokemon getPokemon(@PathVariable String pokemonName) {
+  public PokemonDTO getPokemon(@PathVariable String pokemonName) {
     return pokemonService.observePokemon(pokemonName);
   }
 }
